@@ -1,6 +1,6 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Dialog, DialogActionsBar } from '@progress/kendo-react-dialogs';
 
 import { Form, FormElement } from '@progress/kendo-react-form';
 import { Button } from '@progress/kendo-react-buttons';
@@ -32,6 +32,38 @@ export const App = () => {
         { label: 'Confirm', isValid: undefined },
     ]);
 
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible: true
+        };
+        this.toggleDialog = this.toggleDialog.bind(this);
+    }
+
+    toggleDialog() {
+        this.setState({
+            visible: !this.state.visible
+        });
+    }
+
+    render() {
+        return (
+            <div>
+                <button className="k-button" onClick={this.toggleDialog}>Open Dialog</button>
+                {this.state.visible && <Dialog title={"Submitted"} onClose={this.toggleDialog}>
+                    <p style={{ margin: "25px", textAlign: "center" }}>Your request has been submitted. Your reference number is:</p>
+                    <p style={{ margin: "25px", textAlign: "center" }}><b class="boop">5a78a076-79a1-4473-9a33-0639fcf64cd4</b></p>
+                    <p style={{ margin: "25px", textAlign: "center" }}>You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement.</p>
+                    <DialogActionsBar>
+                        <button className="k-button" onClick={this.toggleDialog}>OK</button>
+                    </DialogActionsBar>
+                </Dialog>}
+            </div>
+        );
+    }
+}
+
     const lastStepIndex = steps.length - 1;
     const isLastStep = lastStepIndex === step;
     const isPreviousStepsValid = steps
@@ -54,8 +86,10 @@ export const App = () => {
 
 
             if (isLastStep && isPreviousStepsValid && isValid) {
-                alert("Your request has been submitted. Your Reference Number is:"+ "\n\n" + "5a78a076-79a1-4473-9a33-0639fcf64cd4" + "\n\n" + "You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement."
-               );
+                ReactDOM.render(
+    <App />,
+    document.querySelector('my-app')
+);
             }
         },
         [step, steps, setSteps, setStep, setFormState, isLastStep, isPreviousStepsValid]
