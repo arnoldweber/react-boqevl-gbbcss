@@ -50,7 +50,6 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <button className="k-button" onClick={this.toggleDialog}>Open Dialog</button>
                 {this.state.visible && <Dialog title={"Submitted"} onClose={this.toggleDialog}>
                     <p style={{ margin: "25px", textAlign: "center" }}>Your request has been submitted. Your reference number is:</p>
                     <p style={{ margin: "25px", textAlign: "center" }}><b class="boop">5a78a076-79a1-4473-9a33-0639fcf64cd4</b></p>
