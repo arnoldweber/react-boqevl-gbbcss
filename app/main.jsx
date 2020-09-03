@@ -50,7 +50,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                {this.state.visible && <Dialog title={"Submitted"} onClose={this.toggleDialog}>
+                {this.state.visible && <Dialog title={} onClose={this.toggleDialog} width={500} height={300}>
                     <p style={{ margin: "25px", textAlign: "center" }}>Your request has been submitted. Your reference number is:</p>
                     <p style={{ margin: "25px", textAlign: "center" }}><b class="boop">5a78a076-79a1-4473-9a33-0639fcf64cd4</b></p>
                     <p style={{ margin: "25px", textAlign: "center" }}>You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement.</p>
