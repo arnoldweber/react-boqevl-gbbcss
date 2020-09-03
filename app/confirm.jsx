@@ -1,5 +1,4 @@
 import React from 'react';
-import {v4 as uuid} from 'uuid'
 
 function App() {
   return (
@@ -11,12 +10,17 @@ function App() {
 
 export const Confirm = (
     <div>
-      <p>Name: Yadda</p>
-      <p>Email: Yadda</p>
-      <p>Favorite Food: Yadda</p>
-      <p>3rd grade teacher's name: Yadda</p>
-      <p>Beatles or Elvis: Yadda</p>
-      <p> Reference ID: <App reference={uuid()}/></p>
+    <br />
+      <em><b>Please verify your request details before proceeding.</b></em>
+      <br />
+      <p class="bop"><b>Brand:</b> Kik</p>
+      <p class="bop"><b>Request Type:</b> Emergency Disclosure Request</p>
+      <p class="bop"><b>JID:</b> alaindeleon_97r</p>
+      <p class="bop"><b>Requested Date Range:</b> 2020-07-01 --> 2020-08-29</p>
+      <p class="bop"><b>Due Date:</b> 2020-09-13</p>
+      <p class="bop"><b>Your Name:</b> Thiago Silva</p>
+      <p class="bop"><b>Your E-mail:</b> tsilva@chelseapd.gov</p>
+      <p class="bop"><b>Agency:</b> Chelsea Police Department</p>
       
     </div>
 

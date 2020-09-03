@@ -11,6 +11,7 @@ import { PersonalDetails } from './personal-details.jsx';
 import { PaymentDetails } from './payment-details.jsx';
 import { Final } from './final.jsx';
 import { Confirm } from './confirm.jsx';
+import {v4 as uuid} from 'uuid';
 
 const stepPages = [
     AccountDetails,
@@ -50,8 +51,11 @@ export const App = () => {
             setStep(() => Math.min(step + 1, lastStepIndex));
             setFormState(values);
 
+
+
             if (isLastStep && isPreviousStepsValid && isValid) {
-                alert(JSON.stringify(values));
+                alert("Your request has been submitted. Your Reference Number is:"+ "\n" + "5a78a076-79a1-4473-9a33-0639fcf64cd4" + "\n" + "You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement."
+               );
             }
         },
         [step, steps, setSteps, setStep, setFormState, isLastStep, isPreviousStepsValid]
