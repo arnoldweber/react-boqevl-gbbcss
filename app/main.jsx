@@ -54,7 +54,7 @@ export const App = () => {
 
 
             if (isLastStep && isPreviousStepsValid && isValid) {
-                alert("\t\t\t\t\t\t\t\t\t Your request has been submitted. Your Reference Number is:"+ "\n\n" + "\t\t\t\t\t\t\t\t\t\t\t 5a78a076-79a1-4473-9a33-0639fcf64cd4" + "\n\n" + "You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement."
+                alert("Your request has been submitted. Your Reference Number is:"+ "\n\n" + "5a78a076-79a1-4473-9a33-0639fcf64cd4" + "\n\n" + "You will receive a response by the due date listed on your legal order to the email addresses provided. Please do not submit duplicate requests as this will affect your queue placement."
                );
             }
         },
